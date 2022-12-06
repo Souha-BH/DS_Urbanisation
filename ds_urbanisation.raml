@@ -1,0 +1,33 @@
+#%RAML 1.0
+
+resourceTypes:
+  Member:
+    get:
+      body:
+        application/json:
+          type: Date
+                  
+                  
+title: DS_Urbanisation
+version: v1
+baseUri: http://localhost:3000
+types:
+  Date:
+    properties:
+      date: string
+    example:
+      date: Monday, March 12, 2019
+     
+/displayDate:
+  type: { Member: {item : Date} }
+  get: 
+    queryParameters:
+      dayOfWeek:
+        type: number
+      day:
+        type: number
+      month:
+        type: number
+      year:
+        type: number
+        
