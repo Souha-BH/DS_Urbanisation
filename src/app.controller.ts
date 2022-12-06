@@ -11,7 +11,6 @@ export class AppController {
   }
 
   @Get('day-of-week/:day')
-  @Header("content-type", "application/xml")
   getDayOfWeek(@Request() req, @Response() res, @Param('day') day: string): string {
     let data = `<?xml version="1.0" encoding="UTF-8"?>`;
     data += `<day>`;
@@ -46,7 +45,6 @@ export class AppController {
     res.status(200).send(data);
     return data;
   }
-  @Header("content-type", "application/xml")
   @Get('month-of-year/:month')
   getMonthOfTheYear(@Request() req, @Response() res, @Param('month') month: string): string {
     let data = `<?xml version="1.0" encoding="UTF-8"?>`;
